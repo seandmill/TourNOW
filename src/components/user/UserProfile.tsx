@@ -1,4 +1,3 @@
-// frontend/src/components/user/UserProfile.tsx
 import { Settings, LogOut } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

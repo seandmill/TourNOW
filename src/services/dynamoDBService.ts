@@ -1,15 +1,37 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
 
-// AWS Configuration
-const AWS_REGION = 'us-east-1';
-const AWS_DYNAMODB_ENDPOINT = 'http://localhost:8000';
+const AWS_REGION = process.env.VITE_AWS_REGION ?? 'us-east-1';
+const AWS_ACCESS_KEY_ID = process.env.VITE_AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.VITE_AWS_SECRET_ACCESS_KEY;
+const AWS_SESSION_TOKEN = process.env.VITE_AWS_SESSION_TOKEN;
+
+// DynamoDB client configuration
+const clientConfig: any = {
+  region: AWS_REGION,
+};
+
+// Explicitly set credentials if they exist in environment variables
+if (AWS_ACCESS_KEY_ID && AWS_SECRET_ACCESS_KEY) {
+  clientConfig.credentials = {
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+  };
+  
+  // Add session token if it exists (required for temporary credentials in AWS Academy)
+  if (AWS_SESSION_TOKEN) {
+    clientConfig.credentials.sessionToken = AWS_SESSION_TOKEN;
+  }
+}
+
+// Only set endpoint for local development
+// In production, the SDK will use the AWS_REGION to determine the endpoint
+if (process.env.VITE_AWS_DYNAMODB_ENDPOINT) {
+  clientConfig.endpoint = process.env.VITE_AWS_DYNAMODB_ENDPOINT;
+}
 
 // Initialize the DynamoDB client
-const client = new DynamoDBClient({
-  region: AWS_REGION,
-  endpoint: AWS_DYNAMODB_ENDPOINT,
-});
+const client = new DynamoDBClient(clientConfig);
 
 // Create a document client from the DynamoDB client
 const docClient = DynamoDBDocumentClient.from(client);

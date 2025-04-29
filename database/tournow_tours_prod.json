@@ -7,13 +7,13 @@
         "S": "T001"
       },
       "video_url": {
-        "S": "s3://tournow-repository/assets/videos/tours/cliffs.mp4"
+        "S": "/src/assets/videos/tours/cliffs_of_moher.mp4"
       },
       "description": {
         "S": "Panoramic one-day hike along Ireland’s famous cliffs."
       },
       "image_url": {
-        "S": "s3://tournow-repository/assets/images/tours/cliffs.jpg"
+        "S": "/src/assets/images/tours/cliffs.png"
       },
       "country": {
         "S": "Ireland"
@@ -30,13 +30,13 @@
         "S": "T002"
       },
       "video_url": {
-        "S": "s3://tournow-repository/assets/videos/tours/bigsur.mp4"
+        "S": "/src/assets/videos/tours/big_sur_coastal_trail.mp4"
       },
       "description": {
         "S": "Rugged shoreline trek with Pacific Ocean vistas."
       },
       "image_url": {
-        "S": "s3://tournow-repository/assets/images/tours/bigsur.jpg"
+        "S": "/src/assets/images/tours/bigsur.png"
       },
       "country": {
         "S": "USA"
@@ -53,13 +53,13 @@
         "S": "T005"
       },
       "video_url": {
-        "S": "s3://tournow-repository/assets/videos/tours/byron.mp4"
+        "S": "/src/assets/videos/tours/byron_bay.mp4"
       },
       "description": {
         "S": "Sunrise hike to Australia’s eastern-most point."
       },
       "image_url": {
-        "S": "s3://tournow-repository/assets/images/tours/byron.jpg"
+        "S": "/src/assets/images/tours/byron.png"
       },
       "country": {
         "S": "Australia"
@@ -76,13 +76,13 @@
         "S": "T004"
       },
       "video_url": {
-        "S": "s3://tournow-repository/assets/videos/tours/otter.mp4"
+        "S": "/src/assets/videos/tours/otter_trail.mp4"
       },
       "description": {
         "S": "Five-day Garden Route adventure in South Africa."
       },
       "image_url": {
-        "S": "s3://tournow-repository/assets/images/tours/otter.jpg"
+        "S": "/src/assets/images/tours/otter.png"
       },
       "country": {
         "S": "South Africa"
