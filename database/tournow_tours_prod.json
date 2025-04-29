@@ -1,0 +1,94 @@
+[
+    {
+      "city": {
+        "S": "Doolin"
+      },
+      "tour_id": {
+        "S": "T001"
+      },
+      "video_url": {
+        "S": "s3://tournow-repository/assets/videos/tours/cliffs.mp4"
+      },
+      "description": {
+        "S": "Panoramic one-day hike along Ireland’s famous cliffs."
+      },
+      "image_url": {
+        "S": "s3://tournow-repository/assets/images/tours/cliffs.jpg"
+      },
+      "country": {
+        "S": "Ireland"
+      },
+      "title": {
+        "S": "Cliffs of Moher Coastal Walk"
+      }
+    },
+    {
+      "city": {
+        "S": "Monterey"
+      },
+      "tour_id": {
+        "S": "T002"
+      },
+      "video_url": {
+        "S": "s3://tournow-repository/assets/videos/tours/bigsur.mp4"
+      },
+      "description": {
+        "S": "Rugged shoreline trek with Pacific Ocean vistas."
+      },
+      "image_url": {
+        "S": "s3://tournow-repository/assets/images/tours/bigsur.jpg"
+      },
+      "country": {
+        "S": "USA"
+      },
+      "title": {
+        "S": "Big Sur Coastal Trail"
+      }
+    },
+    {
+      "city": {
+        "S": "Byron Bay"
+      },
+      "tour_id": {
+        "S": "T005"
+      },
+      "video_url": {
+        "S": "s3://tournow-repository/assets/videos/tours/byron.mp4"
+      },
+      "description": {
+        "S": "Sunrise hike to Australia’s eastern-most point."
+      },
+      "image_url": {
+        "S": "s3://tournow-repository/assets/images/tours/byron.jpg"
+      },
+      "country": {
+        "S": "Australia"
+      },
+      "title": {
+        "S": "Cape Byron Lighthouse Walk"
+      }
+    },
+    {
+      "city": {
+        "S": "Storms River"
+      },
+      "tour_id": {
+        "S": "T004"
+      },
+      "video_url": {
+        "S": "s3://tournow-repository/assets/videos/tours/otter.mp4"
+      },
+      "description": {
+        "S": "Five-day Garden Route adventure in South Africa."
+      },
+      "image_url": {
+        "S": "s3://tournow-repository/assets/images/tours/otter.jpg"
+      },
+      "country": {
+        "S": "South Africa"
+      },
+      "title": {
+        "S": "Otter Trail Explorer"
+      }
+    }
+  ]

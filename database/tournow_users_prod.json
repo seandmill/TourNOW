@@ -1,0 +1,102 @@
+[
+    {
+      "user_id": {
+        "S": "U1001"
+      },
+      "address": {
+        "S": "15 Brockforth, Dublin, Ireland"
+      },
+      "email": {
+        "S": "j.larsen@tournow.com"
+      },
+      "join_date": {
+        "S": "2025-04-01"
+      },
+      "name": {
+        "S": "Jack Larsen"
+      },
+      "user_name": {
+        "S": "j_larsen"
+      }
+    },
+    {
+      "user_id": {
+        "S": "U1004"
+      },
+      "address": {
+        "S": "23 Dassie St, Denneoord, George, 6529, South Africa"
+      },
+      "email": {
+        "S": "corvan@tournow.com"
+      },
+      "join_date": {
+        "S": "2024-01-02"
+      },
+      "name": {
+        "S": "Sid Corvan"
+      },
+      "user_name": {
+        "S": "corvan"
+      }
+    },
+    {
+      "user_id": {
+        "S": "U1005"
+      },
+      "address": {
+        "S": "28 Applegum Dr, South Morang VIC 3752, Australia"
+      },
+      "email": {
+        "S": "cfranc@tournow.com"
+      },
+      "join_date": {
+        "S": "2025-02-28"
+      },
+      "name": {
+        "S": "Cait Franc"
+      },
+      "user_name": {
+        "S": "cfranc"
+      }
+    },
+    {
+      "user_id": {
+        "S": "U1002"
+      },
+      "address": {
+        "S": "1800 Cherrywood Ct, Dallas, TX, USA"
+      },
+      "email": {
+        "S": "sean.miller@tournow.com"
+      },
+      "join_date": {
+        "S": "2023-07-29"
+      },
+      "name": {
+        "S": "Sean Miller"
+      },
+      "user_name": {
+        "S": "sean_miller"
+      }
+    },
+    {
+      "user_id": {
+        "S": "U1003"
+      },
+      "address": {
+        "S": "Galleria Passarella, 2, 20122 Milano MI, Italy"
+      },
+      "email": {
+        "S": "liz.willms1@tournow.com"
+      },
+      "join_date": {
+        "S": "2022-03-16"
+      },
+      "name": {
+        "S": "Elizabeth Williams"
+      },
+      "user_name": {
+        "S": "lizwil"
+      }
+    }
+  ]
