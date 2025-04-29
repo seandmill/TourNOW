@@ -37,6 +37,9 @@ export function UserList({ users, filters }: UserListProps) {
               Name
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              User Name
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
               Email
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -62,11 +65,16 @@ export function UserList({ users, filters }: UserListProps) {
                   </div>
                   <div className="ml-4">
                     <div className="text-sm font-medium text-gray-900">
-                      {user.name.S} ({user.user_name.S})
+                      {user.name.S}
                     </div>
                   </div>
                 </div>
-              </td>              
+              </td>         
+              <td className="px-6 py-4 whitespace-nowrap">
+                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                  {user.user_name.S}
+                </span>
+              </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-500">{user.email.S}</div>
               </td>

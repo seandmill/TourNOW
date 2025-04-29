@@ -1,4 +1,3 @@
-// frontend/src/components/layout/navigation/NavigationConfig.ts
 import {
     LayoutDashboard,
     Users,

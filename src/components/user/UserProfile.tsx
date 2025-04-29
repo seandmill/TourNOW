@@ -6,7 +6,7 @@ export function UserProfile() {
   const navigate = useNavigate();
 
   const handleSettings = () => {
-    navigate(`/settings/profile`);
+    navigate(`/users`);
   };
 
   return (
@@ -18,8 +18,8 @@ export function UserProfile() {
           </span>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm font-medium text-gray-900">{'TourNOW User'}</span>
-          <span className="text-xs text-gray-500">{'TourNOW User'}</span>
+          <span className="text-sm font-medium text-gray-900">{'TourNOW Admin'}</span>
+          <span className="text-xs text-gray-500">{'Admin Profile'}</span>
         </div>
       </div>
       <div className="flex items-center space-x-2">

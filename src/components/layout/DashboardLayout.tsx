@@ -3,8 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { DashboardNav } from '@/components/layout/DashboardNav';
 import { UserProfile } from '@/components/user/UserProfile';
 import { Menu } from 'lucide-react';
-
-const defaultLogoUrl = './src/assets/images/logo_b.png';
+import defaultLogoUrl from '@/assets/images/tournow_logo.png';
 
 export function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -19,10 +18,10 @@ export function DashboardLayout() {
         <div className="flex flex-col items-center">
           <img 
             src={defaultLogoUrl}
-            alt={'TourNOW logo'}
-            className="h-8 w-auto object-contain"
+            alt="TourNOW logo"
+            className="h-8 w-auto object-contain max-w-[96px]"
           />
-          <h1 className="text-sm font-semibold mt-1">{'TourNOW'}</h1>
+          <h1 className="text-sm font-semibold mt-1">TourNOW</h1>
         </div>
         
         {/* HAMBURGER BUTTON (toggles sidebar) */}
@@ -55,12 +54,14 @@ export function DashboardLayout() {
         `}
       >
         <div className="p-6 flex flex-col items-center text-center">
-          <img 
-            src={defaultLogoUrl}
-            alt="TourNOW logo"
-            className="h-16 w-auto object-contain"
-          />
-          <h1 className="text-xl font-semibold text-gray-900 mt-3">{'TourNOW'}</h1>
+          <div className="w-64 h-64 flex items-center justify-center">
+            <img 
+              src={defaultLogoUrl}
+              alt="TourNOW logo"
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+          <h1 className="text-xl font-semibold text-gray-900 mt-3">TourNOW</h1>
         </div>
 
         <DashboardNav />
