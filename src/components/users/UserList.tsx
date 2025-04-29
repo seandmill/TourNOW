@@ -21,9 +21,9 @@ export function UserList({ users, filters }: UserListProps) {
 
   const filteredUsers = users.filter(user => {
     const matchesSearch = !filters.search || 
-      user.name.S.toLowerCase().includes(filters.search.toLowerCase()) ||
-      user.user_name.S.toLowerCase().includes(filters.search.toLowerCase()) ||
-      user.email.S.toLowerCase().includes(filters.search.toLowerCase());
+      user.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+      user.user_name.toLowerCase().includes(filters.search.toLowerCase()) ||
+      user.email.toLowerCase().includes(filters.search.toLowerCase());
     return matchesSearch;
   });
 
@@ -54,36 +54,36 @@ export function UserList({ users, filters }: UserListProps) {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {filteredUsers.map((user) => (
-            <tr key={user.user_id.S} className="hover:bg-gray-50">
+            <tr key={user.user_id} className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="flex items-center">
                   <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
                     <span className="text-sm font-medium text-blue-600">
-                      {user.name.S[0]}
+                      {user.name[0]}
                     </span>
                   </div>
                   <div className="ml-4">
                     <div className="text-sm font-medium text-gray-900">
-                      {user.name.S}
+                      {user.name}
                     </div>
                   </div>
                 </div>
               </td>         
               <td className="px-6 py-4 whitespace-nowrap">
                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                  {user.user_name.S}
+                  {user.user_name}
                 </span>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">{user.email.S}</div>
+                <div className="text-sm text-gray-500">{user.email}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                  {user.join_date.S}
+                  {user.join_date}
                 </span>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">{user.address.S}</div>
+                <div className="text-sm text-gray-500">{user.address}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <button className="text-gray-400 hover:text-gray-600">

@@ -5,11 +5,12 @@ import { fetchTours } from '@/services/dynamoDBService';
 import { Tour } from '@/types';
 
 export function TourManagement() {
-  const [Tours, setTours] = useState<Tour[]>([]);
+  const [tours, setTours] = useState<Tour[]>([]);
   const [filters, setFilters] = React.useState({
     role: '',
     status: '',
     search: '',
+    category: '',
   });
 
   // Load Tours from DynamoDB
@@ -17,7 +18,7 @@ export function TourManagement() {
     const loadTours = async () => {
       try {
         const TourData = await fetchTours();
-        setTours(TourData as Tour[]);
+        setTours(TourData);
       } catch (error) {
         console.error('Failed to load Tours:', error);
       }
@@ -33,7 +34,7 @@ export function TourManagement() {
       </div>
 
       <TourFilters filters={filters} onFilterChange={setFilters} />
-      <TourList tours={Tours} filters={filters} />
+      <TourList tours={tours} filters={filters} />
     </div>
   );
 }

@@ -20,8 +20,18 @@ export const fetchTours = async (): Promise<Tour[]> => {
     return data;
   } catch (error) {
     console.error('Error fetching tours from API, falling back to local JSON:', error);
+    // Fallback logic remains useful for offline/dev scenarios
     const toursData = await import('../../database/tournow_tours_prod.json');
-    return toursData.default as Tour[];
+    // Transform the fallback data structure
+    return toursData.default.map((item: any) => ({
+      tour_id: item.tour_id.S,
+      title: item.title.S,
+      description: item.description.S,
+      city: item.city.S,
+      country: item.country.S,
+      image_url: item.image_url.S,
+      video_url: item.video_url.S,
+    }));
   }
 };
 
@@ -41,7 +51,16 @@ export const fetchUsers = async (): Promise<User[]> => {
     return data;
   } catch (error) {
     console.error('Error fetching users from API, falling back to local JSON:', error);
+    // Fallback logic remains useful for offline scenarios
     const usersData = await import('../../database/tournow_users_prod.json');
-    return usersData.default as User[];
+    // Transform the fallback data structure
+    return usersData.default.map((item: any) => ({
+      user_id: item.user_id.S,
+      name: item.name.S,
+      user_name: item.user_name.S,
+      email: item.email.S,
+      join_date: item.join_date.S,
+      address: item.address.S,
+    }));
   }
 };

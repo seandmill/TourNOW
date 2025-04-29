@@ -1,17 +1,11 @@
-// Represents the DynamoDB structure for a string attribute
-interface DynamoDbString {
-    S: string;
-}
-
-// Interface for the Tour data based on tournow_tours_prod.json
 export interface Tour {
-    tour_id: DynamoDbString;
-    title: DynamoDbString;
-    description: DynamoDbString;
-    city: DynamoDbString;
-    country: DynamoDbString;
-    image_url: DynamoDbString;
-    video_url: DynamoDbString;
+    tour_id: string;
+    title: string;
+    description: string;
+    city: string;
+    country: string;
+    image_url: string;
+    video_url: string;
 }
 
 export type UserRole = 'USER';
@@ -20,12 +14,11 @@ export interface UserAuth {
   role: UserRole;
 }
 
-// Interface for the User data based on tournow_users_prod.json
 export interface User {
-    user_id: DynamoDbString;
-    name: DynamoDbString;
-    user_name: DynamoDbString;
-    email: DynamoDbString;
-    join_date: DynamoDbString;
-    address: DynamoDbString;
+    user_id: string;
+    name: string;
+    user_name: string;
+    email: string;
+    join_date: string;
+    address: string;
 }
