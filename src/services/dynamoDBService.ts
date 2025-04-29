@@ -1,52 +1,47 @@
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
+import { Tour, User } from '@/types';
 
-const AWS_REGION = process.env.VITE_AWS_REGION ?? 'us-east-1';
-// For local development (DynamoDB Local), optionally set endpoint
-const DYNAMODB_ENDPOINT = process.env.VITE_AWS_DYNAMODB_ENDPOINT;
-
-const clientConfig: any = {
-  region: AWS_REGION,
-};
-
-if (DYNAMODB_ENDPOINT) {
-  clientConfig.endpoint = DYNAMODB_ENDPOINT;
-}
-
-// Credentials are automatically provided via the EC2 instance role
-const client = new DynamoDBClient(clientConfig);
-const docClient = DynamoDBDocumentClient.from(client);
+const API_BASE_URL = process.env.NODE_ENV === 'production'
+  ? '/api'
+  : 'http://localhost:3001/api';
 
 /**
- * Fetch all tours from DynamoDB.
- * If the scan fails (e.g., no permissions or offline), fall back to local JSON.
+ * Fetch all tours from the backend API.
+ * Falls back to local JSON if the API call fails.
  */
-export const fetchTours = async (): Promise<any[]> => {
+export const fetchTours = async (): Promise<Tour[]> => {
   try {
-    const { Items } = await docClient.send(
-      new ScanCommand({ TableName: 'tournow_tours_prod' })
-    );
-    return Items ?? [];
+    const response = await fetch(`${API_BASE_URL}/tours`);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`Error fetching tours from API: ${response.status} ${response.statusText}`, errorText);
+      throw new Error(`API request failed with status ${response.status}`);
+    }
+    const data: Tour[] = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching tours from DynamoDB:', error);
+    console.error('Error fetching tours from API, falling back to local JSON:', error);
     const toursData = await import('../../database/tournow_tours_prod.json');
-    return toursData.default;
+    return toursData.default as Tour[];
   }
 };
 
 /**
- * Fetch all users from DynamoDB.
- * If the scan fails, fall back to local JSON.
+ * Fetch all users from the backend API.
+ * Falls back to local JSON if the API call fails.
  */
-export const fetchUsers = async (): Promise<any[]> => {
+export const fetchUsers = async (): Promise<User[]> => {
   try {
-    const { Items } = await docClient.send(
-      new ScanCommand({ TableName: 'tournow_users_prod' })
-    );
-    return Items ?? [];
+    const response = await fetch(`${API_BASE_URL}/users`);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`Error fetching users from API: ${response.status} ${response.statusText}`, errorText);
+      throw new Error(`API request failed with status ${response.status}`);
+    }
+    const data: User[] = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching users from DynamoDB:', error);
+    console.error('Error fetching users from API, falling back to local JSON:', error);
     const usersData = await import('../../database/tournow_users_prod.json');
-    return usersData.default;
+    return usersData.default as User[];
   }
 };
