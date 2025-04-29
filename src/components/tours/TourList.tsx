@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tour } from '@/types';
 
 // Use the '@' alias in the glob pattern

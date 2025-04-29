@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { SpinnerPage } from '@/components/loading/Spinner'; // the spinner you designed
+import { Suspense } from 'react';
+import { SpinnerPage } from '@/components/loading/Spinner';
 import { AppRoutes } from './routes';
 
 
